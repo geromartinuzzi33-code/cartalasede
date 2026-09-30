@@ -1,0 +1,18 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+collections:
+    - name: "productos"
+    label: "Productos de la carta"
+    folder: "data/productos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+            - {label: "Nombre", name: "title", widget: "string"}
+            - {label: "Precio", name: "precio", widget: "string", hint: "Ej: $3500"}
+            - {label: "Categoria", name: "categoria", widget: "select", options: ["Pizzas", "Empanadas", "Bebidas", "Postres", "Otros"]}
+            - {label: "Descripción", name: "descripcion", widget: "text", required: false}
+            - {label: "Foto", name: "imagen", widget: "image", required: false}
+            - {label: "Destacado", name: "destacado", widget: "boolean", default: false}
